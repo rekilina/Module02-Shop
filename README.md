@@ -108,7 +108,59 @@ module.exports = {
 ```
 Что будет делать html-loader? В минимизированный html файл он будет подставлять измененное название картинки, а именно ее хэш.
 ## SCSS
-
+Для автоматического преобразования SCSS в CSS установим сразу несколько пакетов
+```
+npm install -D sass-loader sass css-loader style-loader
+```
+Добавляем в `rules`:
+```
+{
+    test: /\.css$/i,
+    use: [
+        'style-loader', 'css-loader'
+    ]
+},
+{
+    test: /\.scss$/i,
+    use: [
+        'style-loader', 'css-loader', 'sass-loader'
+    ]
+}
+```
+Что-то уже есть, но пока что ничего не готово. На данный момент, если выполнить `npm run build`, то все css файлы буду автоматически преобразовываться в js, а именно в bundle.js, это будет негативно сказываться на скорости работы сайта.<br>
+Чтобы scss преобразовывался в css, нужно подключить плагин `mini-css-extract-plugin`:
+```
+npm install mini-css-extract-plugin --save-dev
+```
+Подключаем плагин в планироващик:
+```
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+..............
+plugins: [
+    ..............
+    new MiniCssExtractPlugin({
+        filename: './styles/main.css'
+    })
+],
+..............
+{
+    test: /\.css$/i,
+    use: [
+        MiniCssExtractPlugin.loader, 'css-loader'
+    ]
+},
+{
+    test: /\.scss$/i,
+    use: [
+        MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
+    ]
+}
+```
+В файле index.js:
+```
+import './styles/main.scss'
+```
+Отметим, что в файле index.js мы указываем путь относительно корневого каталога проекта, а в webpack.config.js - относительно папки dist. Таким образом, в index.js указано, что мы преобразуем, а в webpack.config.js - *во* что преобразуем и куда записываем результат.
 
 
 
