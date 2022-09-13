@@ -2,12 +2,21 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+const devServer = (isDev) => !isDev ? {} : {
+    devServer: {
+        open: true, // при запуске сервера открывается браузер
+        hot: true, // страница автоматически обновляется при внесении изменений
+        port: 5501 // 8081
+    }
+};
+
+module.exports = ({develop}) => ({
+    mode: develop ? 'development' : 'production',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        assetModuleFilename: 'images/[hash][ext][query]',
+        //assetModuleFilename: 'images/[hash][ext][query]',
         clean: true,
     },
     plugins: [
@@ -22,7 +31,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(?:ico|png|jpg|jpeg|svg)$/i,
-                type: 'asset/resource'
+                type: 'asset/inline'  //resource
             },
             {
                 test: /\.html$/i,
@@ -41,5 +50,6 @@ module.exports = {
                 ]
             }
         ]
-    }
-};
+    },
+    ...devServer(develop),
+});
