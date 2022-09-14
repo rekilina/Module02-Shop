@@ -217,7 +217,11 @@ npm run dev
 1. `type: 'asset/resource'` --> `'asset/inline'`
 2. убираем (комментируем) строку `assetModuleFilename: 'images/[hash][ext][query]',`
 Удаляем папку dist и пересобираем проект (`npm run build`)<br>
-
+<br>
+To load npm modules: 
+```
+npm -i
+```
 
 
 
