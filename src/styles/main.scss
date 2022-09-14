@@ -1,0 +1,74 @@
+$text: #27300f;
+$orange: #d26a22;
+$white: #ffffff;
+
+.main {
+
+}
+.header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__nav {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
+        gap: 48px;
+    }
+    &__link {
+        text-decoration: none;
+        font-family: Jost;
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 400;
+        color: $text;
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__tel {
+        text-decoration: none;
+        font-family: Jost;
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: $text;
+    }
+    &__card {
+        text-decoration: none;
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: $orange;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url(../img/card-icon.svg);
+        background-size: 17px 15px;
+        position: relative;
+    }
+    &__counter {
+        color: $white;
+        position: absolute;
+        right: 8px;
+        top: 6px;
+        font-family: Jost;
+        font-size: 8px;
+        line-height: 1.2;
+        font-weight: 400;
+        color: #ffffff;
+    }
+}
+.logo {
+    background-image: url(../img/logo.svg);
+    display: block;
+    width: 120px;
+    height: 32px;
+}
