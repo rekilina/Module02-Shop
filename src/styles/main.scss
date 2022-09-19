@@ -1,14 +1,24 @@
-$text: #27300f;
+@import url('https://fontfamil$s.googleapis.com/css2?family=Cormorant:ital,wght@0,700;1,700&family=Jost:wght@400;500&display=swap');
+
+$green: rgb(39, 48, 15);
 $orange: #d26a22;
 $white: #ffffff;
 
-.main {
+$font-jost: 'Jost', sans-serif;
+$font-cormorant: 'Cormorant', serif;
 
+html {
+    font-size: 10px;
+}
+body {
+    font-size: 1.6rem;
+    font-family: $font-jost;
+    color: $green;
 }
 .header {
     max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 15px;
+    margin: 0 auto ;
+    padding: 4rem 15px 47px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,51 +26,51 @@ $white: #ffffff;
         display: flex;
         list-style-type: none;
         margin: 0;
-        padding: 0;
+        padding: 0 0 0 29px;
         justify-content: space-between;
         gap: 48px;
     }
     &__link {
         text-decoration: none;
-        font-family: Jost;
-        font-size: 16px;
+        font-family: $font-jost;
         line-height: 1.2;
         font-weight: 400;
-        color: $text;
-        &:hover {
-            color: $orange;
-        }
+        color: $green;
     }
     &__tel {
         text-decoration: none;
-        font-family: Jost;
-        font-size: 16px;
+        font-family: $font-jost;
         line-height: 1.2;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: $text;
+        color: $green;
+        padding: 0 0 0 152px;
     }
     &__card {
         text-decoration: none;
         display: block;
-        width: 40px;
-        height: 40px;
+        width: 4rem;
+        height: 4rem;
         background-color: $orange;
         border-radius: 50%;
         background-repeat: no-repeat;
         background-position: center center;
         background-image: url(../img/card-icon.svg);
-        background-size: 17px 15px;
+        background-size: 1.7rem 1.5rem;
         position: relative;
+        border: none;
+        &:hover {
+            background-color: $green;
+        }
     }
     &__counter {
         color: $white;
         position: absolute;
-        right: 8px;
-        top: 6px;
-        font-family: Jost;
-        font-size: 8px;
+        right: 0.8rem;
+        top: 0.6rem;
+        font-family: $font-jost;
+        font-size: 0.8rem;
         line-height: 1.2;
         font-weight: 400;
         color: #ffffff;
@@ -71,4 +81,156 @@ $white: #ffffff;
     display: block;
     width: 120px;
     height: 32px;
+}
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.main {
+    background-image: url(../img/background_1_screen_415.png);
+    background-size: cover;
+    background-position-x: center;
+    position: relative;
+    z-index: -10;
+    &__text {
+        margin-top: 1rem;
+    }
+    &__item {
+        margin: 6rem 0 0 12rem;
+        max-width: 378px;
+    }
+    &__link {
+        margin-top: 8rem;
+    }
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+    &__cover {
+        width: 765px;
+        height: 765px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        position: relative;
+        border: 1px solid rgba($green, 0.4);
+        padding: 0;
+    }
+    &__line {
+        flex-basis: 663px;
+        width: 663px;
+        height: 663px;
+        border-radius: 100%;
+        position: relative;
+        border: 1px solid rgba($green, 0.4);
+    }
+    &__image {
+        width: 681px;
+        height: 681px;
+        /*------change later ------------*/
+        position: relative;
+        top: 25px;
+        left: 28px;
+    }
+    &__btn-border {
+        width: 21px;
+        height: 21px;
+        border: 1px solid $green;
+        border-radius: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__btn {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        width: 11px;
+        height: 11px;
+        background-color: $green;
+        border-radius: 100%;
+    }
+    &__btn-1 {
+        top: 60px;
+        left: 147px;
+    }
+    &__btn-2 {
+        bottom: 5px;
+        left: 475px;
+    }
+    &__btn-3 {
+        top: 205px;
+        left: 660px;
+    }
+    &__design {
+        position: absolute;
+        z-index: -1;
+    }
+    &__avocado {
+        right: 0;
+        top: 46px;
+    }
+    &__cucumber {
+        left: 690px;
+        top: 0;
+    }
+    &__pepper-1 {
+        left: 42px;
+        bottom: -19px;
+    }
+    &__pepper-2 {
+        left: 0;
+        bottom: 20px;
+    }
+    &__pepper-3 {
+        left: 20px;
+        bottom: 57px;
+    }
+    &__red_pepper {
+        left: 40px;
+        top: 397px;
+    }
+    &__tomato {
+        right: 120px;
+        bottom: -68px;
+    }
+}
+.title {
+    font-family: $font-cormorant;
+    font-weight: 700;
+    font-size: 8rem;
+    line-height: 80px;
+    margin: 0;
+    &__span {
+        font-style: italic;
+    }
+    &_block {
+        .title__span {
+            display: block;
+        }
+
+    }
+}
+.description {
+    margin: 0;
+    &__size-s {
+        font-size: 1.7rem;
+        line-height: 2.7rem;
+        font-weight: 400;
+        // letter-spacing: 0.001rem;
+    }
+}
+.link {
+    color: $white;
+    padding: 2.5rem 4.5rem;
+    text-transform: uppercase;
+    background-color: $orange;
+    box-shadow: 0px 1rem 1.1rem .2rem rgba(207,92,13,0.2);
+    border-radius: 35px;
+    text-decoration: none;
 }
