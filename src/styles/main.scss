@@ -1,4 +1,4 @@
-@import url('https://fontfamil$s.googleapis.com/css2?family=Cormorant:ital,wght@0,700;1,700&family=Jost:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;1,700&family=Jost:wght@400;500&display=swap');
 
 $green: rgb(39, 48, 15);
 $orange: #d26a22;
@@ -14,6 +14,8 @@ body {
     font-size: 1.6rem;
     font-family: $font-jost;
     color: $green;
+    position: relative;
+    z-index: -10;
 }
 .header {
     max-width: 1440px;
@@ -26,7 +28,7 @@ body {
         display: flex;
         list-style-type: none;
         margin: 0;
-        padding: 0 0 0 29px;
+        padding: 0 0 0 44px;
         justify-content: space-between;
         gap: 48px;
     }
@@ -36,16 +38,19 @@ body {
         line-height: 1.2;
         font-weight: 400;
         color: $green;
+        &:hover {
+            color: $orange;
+        }
     }
     &__tel {
         text-decoration: none;
         font-family: $font-jost;
         line-height: 1.2;
-        font-weight: 500;
+        font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         color: $green;
-        padding: 0 0 0 152px;
+        padding: 0 0 0 160px;
     }
     &__card {
         text-decoration: none;
@@ -97,7 +102,7 @@ body {
         margin-top: 1rem;
     }
     &__item {
-        margin: 6rem 0 0 12rem;
+        margin: 6.2rem 0 0 12rem;
         max-width: 378px;
     }
     &__link {
@@ -119,6 +124,7 @@ body {
         position: relative;
         border: 1px solid rgba($green, 0.4);
         padding: 0;
+        z-index: 2;
     }
     &__line {
         flex-basis: 663px;
@@ -145,27 +151,61 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 10;
+        &:hover{
+            cursor: pointer;
+            border-color: $orange;
+        }
+        &:hover .main__btn {
+            cursor: pointer;
+            background-color: $orange;
+        }
     }
     &__btn {
         border: none;
-        background-color: transparent;
         padding: 0;
         width: 11px;
         height: 11px;
         background-color: $green;
         border-radius: 100%;
+        z-index: 10;
+        &::before {
+            content: '';
+            position: relative;
+            line-height: 2.4rem;
+            font-size: 1.6rem;
+            width: 75px;
+            display: inline-block;
+            z-index: 10;
+            text-align: left;
+        }
     }
     &__btn-1 {
         top: 60px;
         left: 147px;
+        & .main__btn::before{
+            content: 'Авокадо 134 руб';
+            right: 86px;
+            top: -24px;
+        }
     }
     &__btn-2 {
         bottom: 5px;
         left: 475px;
+        & .main__btn::before{
+            content: 'Томаты 215 руб';
+            right: 16px;
+            top: 20px;
+        }
     }
     &__btn-3 {
         top: 205px;
-        left: 660px;
+        left: 656px;
+        & .main__btn::before{
+            content: 'Картофель 169 руб';
+            right: -24px;
+            top: -21px;
+        }
     }
     &__design {
         position: absolute;
@@ -222,15 +262,16 @@ body {
         font-size: 1.7rem;
         line-height: 2.7rem;
         font-weight: 400;
-        // letter-spacing: 0.001rem;
+        letter-spacing: 0.05rem;
     }
 }
 .link {
     color: $white;
-    padding: 2.5rem 4.5rem;
+    padding: 2.2rem 4.5rem;
     text-transform: uppercase;
     background-color: $orange;
     box-shadow: 0px 1rem 1.1rem .2rem rgba(207,92,13,0.2);
     border-radius: 35px;
     text-decoration: none;
+    letter-spacing: 0.1rem;
 }
