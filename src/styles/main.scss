@@ -51,6 +51,9 @@ body {
         letter-spacing: 0.08em;
         color: $green;
         padding: 0 0 0 160px;
+        &:hover {
+            color: $orange;
+        }
     }
     &__card {
         text-decoration: none;
@@ -67,6 +70,7 @@ body {
         border: none;
         &:hover {
             background-color: $green;
+            cursor: pointer;
         }
     }
     &__counter {
@@ -161,6 +165,9 @@ body {
             background-color: $orange;
         }
     }
+    &__food {
+        opacity: 0.6;
+    }
     &__btn {
         border: none;
         padding: 0;
@@ -169,42 +176,50 @@ body {
         background-color: $green;
         border-radius: 100%;
         z-index: 10;
-        &::before {
-            content: '';
-            position: relative;
-            line-height: 2.4rem;
-            font-size: 1.6rem;
-            width: 75px;
-            display: inline-block;
-            z-index: 10;
-            text-align: left;
-        }
     }
     &__btn-1 {
         top: 60px;
         left: 147px;
-        & .main__btn::before{
-            content: 'Авокадо 134 руб';
+        &_crumbs {
+            position: relative;
             right: 86px;
-            top: -24px;
+            top: -36px;
+            line-height: 2.4rem;
+            font-size: 1.6rem;
+            display: inline-block;
+            text-align: left;
+            z-index: 10;
+            width: 85px;
         }
     }
     &__btn-2 {
-        bottom: 5px;
+        bottom: 2px;
         left: 475px;
-        & .main__btn::before{
-            content: 'Томаты 215 руб';
-            right: 16px;
-            top: 20px;
+        &_crumbs {
+            position: relative;
+            right: 15px;
+            top: 2px;
+            line-height: 2.4rem;
+            font-size: 1.6rem;
+            display: inline-block;
+            text-align: left;
+            z-index: 10;
+            width: 70px;
         }
     }
     &__btn-3 {
         top: 205px;
-        left: 656px;
-        & .main__btn::before{
-            content: 'Картофель 169 руб';
-            right: -24px;
-            top: -21px;
+        left: 658px;
+        &_crumbs {
+            position: relative;
+            right: -25px;
+            top: -35px;
+            line-height: 2.4rem;
+            font-size: 1.6rem;
+            display: inline-block;
+            text-align: left;
+            z-index: 10;
+            width: 70px;
         }
     }
     &__design {
