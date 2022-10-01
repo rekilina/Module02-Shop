@@ -19,5 +19,8 @@
     "html-webpack-plugin": "^5.5.0",
     "normalize.css": "^8.0.1",
     "swiper": "^8.4.2"
-  }
+  },
+  "tags": [
+    "swiper"
+  ]
 }
