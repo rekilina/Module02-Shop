@@ -16,6 +16,7 @@ body {
     color: $green;
     position: relative;
     z-index: -10;
+    background-color: $white;
 }
 .header {
     max-width: 1440px;
@@ -280,7 +281,7 @@ body {
         font-size: 1.7rem;
         line-height: 2.7rem;
         font-weight: 400;
-        letter-spacing: 0.05rem;
+        letter-spacing: 0.051rem;
     }
     &__size-m {
         font-size: 2.4rem;
@@ -302,6 +303,7 @@ body {
     background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
+    height: 1047px;
     &__text {
         margin-top: 58px;
         width: 50%;
@@ -310,9 +312,6 @@ body {
         overflow: hidden;
     }
 }
-
-
-
 .swiper {
     overflow: initial;
     padding-top: 96px;
@@ -416,7 +415,7 @@ body {
             text-decoration: none;
             display: flex;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 1.8rem;
             &::before {
                 opacity: 0.8;
                 content: '';
@@ -470,15 +469,16 @@ body {
         }
     }
   }
-
   .about {
-    padding-top: 165px;
+    padding-top: 25px;
+    height: 554px;
+    background-image: url(../img/background\ 3\ screen.png);
     .title {
         padding-left: 5px;
         letter-spacing: 0.01em;
     }
     &__box {
-        padding: 93px 0 0 120px; 
+        padding: 67px 0 0 120px; 
         display: flex;
         justify-content: space-between;
     }
@@ -486,17 +486,42 @@ body {
         font-family: $font-jost;
         font-weight: 400;
         color: $green;
-        padding: 0;
+        padding: 26px 0 0;
         margin: 0;
         flex-basis: 45%;
-        &_size-m {
-            font-size: 18px;
-            line-height: 27px; 
-        }
     }
     &__list {
         display: flex;
         list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 85px;
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-img {
+                width: 87px;
+                height: 87px;
+                border: 1px solid rgba($green, 0.4);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & img {
+                    width: 39px;
+                    height: 39px;
+                }
+            }
+            &-text {
+                font-family: $font-cormorant;
+                font-size: 3rem;
+                line-height: 1.2;
+                font-weight: 700;
+                font-style: italic;
+                color: $green;
+                margin-top: 1.2rem;
+            }
+        }
     }
-    
   }
