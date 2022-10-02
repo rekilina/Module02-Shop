@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;1,700&family=Jost:wght@400;500&display=swap');
-
+@font-face {
+    font-family: 'Avenir Next';
+    font-weight: 400;
+    font-style: normal;
+    src: url("AvenirNextCyr-Regular.woff2") format('woff2');
+}
 $green: rgb(39, 48, 15);
 $orange: #d26a22;
 $white: #ffffff;
@@ -277,10 +282,10 @@ body {
 }
 .description {
     margin: 0;
+    font-weight: 400;
     &__size-s {
         font-size: 1.7rem;
         line-height: 2.7rem;
-        font-weight: 400;
         letter-spacing: 0.051rem;
     }
     &__size-m {
@@ -535,6 +540,7 @@ body {
   .about {
     padding-top: 25px;
     height: 554px;
+    box-sizing: border-box;
     background-image: url(../img/background\ 3\ screen.png);
     .title {
         padding-left: 5px;
@@ -590,7 +596,8 @@ body {
 }
 
 .trends {
-    padding-top: 3px;
+    padding-top: 27px;
+    box-sizing: border-box;
     background-image: url(../img/background\ 4\ screen.png);
     height: 1104px;
     &__text {
@@ -668,5 +675,43 @@ body {
     }
     &+.link {
         padding: 2.2rem 5.3rem;
+    }
+}
+.catalog {
+    padding-top: 36px;
+    box-sizing: border-box;
+    background-image: url(../img/background\ 5\ screen.png);
+    height: 1684px;
+    &__text {
+        padding-top: 3.7rem;
+    }
+    &__description {
+        font-family: 'Avenir Next';
+        letter-spacing: -0.006;
+    }
+    &__btns {
+        width: 100%;
+        padding: 0;
+        padding-top: 8.8rem;
+        margin: 0;
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        &-btn {
+            width: 23rem;
+            height: 7rem;
+            background: transparent;
+            border: 1px solid $green;
+            border-radius: 35px;
+            color: $green;
+            font-family: $font-jost;
+            font-size: 18px;
+            line-height: 1.2;
+            font-weight: 400;
+            &:hover {
+                border-color: $orange;
+                color: $orange;
+            }
+        }
     }
 }
