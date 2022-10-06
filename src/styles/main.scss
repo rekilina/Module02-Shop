@@ -376,8 +376,8 @@ body {
     &-slide {
         border-radius: 20px;
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
+        // display: flex;
+        // flex-direction: column;
         overflow: hidden;
         border: 1px solid rgba($green, 0.55);
         transition: transform 1s;  
@@ -401,7 +401,7 @@ body {
             position: absolute;
             bottom: 13.5rem;
         }
-        &__cover { // or __img?
+        &__cover { 
             position: absolute;
             top: 2.8rem;
             overflow: hidden;
@@ -629,6 +629,7 @@ body {
 }
 .counter {
     display: flex;
+    justify-content: space-between;
     &__input {
         width: 4.2rem;
         display: flex;
@@ -682,6 +683,41 @@ body {
     box-sizing: border-box;
     background-image: url(../img/background\ 5\ screen.png);
     height: 1684px;
+    &__more {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        margin-top: 35px;
+        &:hover {
+            cursor: pointer;
+        }
+        &-text {
+            opacity: 0.8;
+            font-family: $font-jost;
+            font-size: 1.6rem;
+            line-height: 1.2;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: $green;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &-load {
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+            opacity: 0.8;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
     &__text {
         padding-top: 3.7rem;
     }
@@ -698,8 +734,8 @@ body {
         justify-content: flex-start;
         gap: 20px;
         &-btn {
-            width: 23rem;
-            height: 7rem;
+            width: 230px;
+            height: 70px;
             background: transparent;
             border: 1px solid $green;
             border-radius: 35px;
@@ -708,10 +744,127 @@ body {
             font-size: 18px;
             line-height: 1.2;
             font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             &:hover {
                 border-color: $orange;
                 color: $orange;
             }
+        }
+    }
+    &__grid {
+        width: 100%;
+        padding-top: 4.8rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        &-card {
+            border-radius: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba($green, 0.55);
+            transition: transform 1s;  
+            position: relative; 
+            width: 345px;
+            height: 515px;
+            background-color: transparent;
+            padding: 24.6rem 0 0 3rem;
+        }
+        &-cover { 
+            position: absolute;
+            top: 2.8rem;
+            overflow: visible;
+            height: 230px;
+            max-height: 293px;
+            z-index: 0;
+            width: calc(100% - 4rem);
+        }
+        &-img {
+            position: relative;
+            width: 100%;
+            left: 50%;
+            top: 50%;
+            object-fit: none;
+            z-index: -1;
+            &-milk {
+                transform: translate(-52%, -55%);
+            }
+            &-yogurt {
+                transform: translate(-52%, -50%);
+            }
+            &-cottage_cheese {
+                transform: translate(-54%, -42%);
+            }
+            &-mozzarella {
+                transform: translate(-52%, -58%);
+            }
+            &-butter {
+                transform: translate(-52%, -55%);
+            }
+            &-thermostatic {
+                transform: translate(-53%, -45%);
+            }
+            &-cheese {
+                transform: translate(-52%, -57%);
+            }
+            &-sauce {
+                transform: translate(-55%, -58%);
+            }
+        }
+        &-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 4rem;
+            width: 86%;
+            & .counter {
+                &__btn {
+                    width: 4rem;
+                    height: 4rem;
+                }
+                &__input {
+                    width: 2.8rem;
+                }
+            }
+            & .link {
+                font-size: 14px;
+                line-height: 1.2;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+            }
+            & .link {
+                padding: 2.0rem 3.5rem;
+            }
+        }
+        &-title {
+            font-family: $font-cormorant;
+            font-size: 3rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: $green;
+            margin: 0;
+        }
+        &-description {
+            opacity: 0.7;
+            font-family: $font-jost;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: $green;
+            margin: 1.6rem 0;
+            width: 80%;
+        }
+        &-price {
+            font-family: $font-jost;
+            font-size: 24px;
+            line-height: 1.2;
+            font-weight: 400;
+            color: $green;
+            margin: 0;
         }
     }
 }
