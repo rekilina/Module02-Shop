@@ -546,6 +546,9 @@ body {
     height: 554px;
     box-sizing: border-box;
     background-image: url(../img/background\ 3\ screen.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
     .title {
         padding-left: 5px;
         letter-spacing: 0.01em;
@@ -603,6 +606,9 @@ body {
     padding-top: 27px;
     box-sizing: border-box;
     background-image: url(../img/background\ 4\ screen.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
     height: 1104px;
     &__text {
         padding: 4rem 0 0;
@@ -686,6 +692,9 @@ body {
     padding-top: 36px;
     box-sizing: border-box;
     background-image: url(../img/background\ 5\ screen.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
     height: 1684px;
     &__more {
         width: 100%;
@@ -828,7 +837,7 @@ body {
             align-items: center;
             position: absolute;
             bottom: 4rem;
-            width: 86%;
+            width: 83%;
             & .counter {
                 &__btn {
                     width: 4rem;
@@ -887,6 +896,9 @@ body {
     box-sizing: border-box;
     margin-top: -13px;
     background-image: url(../img/background\ 6\ screen.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
     height: 457px;
     &__content {
         display: flex;
@@ -962,16 +974,27 @@ body {
         }
     }
 }
-.contact {
+.footer {
     background-image: url(../img/background\ 7\ screen.png);
     height: 1130px;
-    padding-top: 90px;
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+.contact {
+    padding: 56px 0 166px;
+    box-sizing: border-box;
     &-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
         &__description {
             padding-left: 120px;
+            width: 60%;
+            max-width: 550px;
         }
         &__text {
-            width: 30%;
             margin-top: 60px;
         }
         &__link {
@@ -1021,7 +1044,226 @@ body {
         &__item {
             display: flex;
             align-items: center;
-            
+        }
+        &__form {
+            border: 2px solid rgba($green, 0.4);
+            border-radius: 20px;
+            box-sizing: border-box;
+            width: 50%;
+            padding: 0 60px 39px 57px;
+            max-width: 589px;
+            position: relative;
+            top: 3px;
+            &::before {
+                content: '';
+                height: 5px;
+                display: block;
+            }
+            & .link {
+                border: none;
+                width: 55%;
+                margin-top: 14px;
+            }
+            & .card {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                &__title {
+                    font-family: $font-cormorant;
+                    font-size: 3rem;
+                    line-height: 1.2;
+                    font-weight: 700;
+                    color: $green;
+                }
+                &__label {
+                    font-family: $font-jost;
+                    font-size: 1.2rem;
+                    line-height: 1.2;
+                    font-weight: 400;
+                    color: $green;
+                    margin: 0 0 9px 5px;
+                }
+                &__input {
+                    padding: 20px 25px 20px 30px;
+                    opacity: 0.4;
+                    border: 1px solid #27300f;
+                    border-radius: 20px;
+                    margin: 0 0 28px;
+                    opacity: 0.4;
+                    font-family: $font-jost;
+                    font-size: 1.6rem;
+                    line-height: 1.2;
+                    font-weight: 400;
+                    color: $green;
+                    &:focus {
+                        border: 1px solid rgba($green, 1);
+                        outline: none;
+                    }
+                    &:invalid {
+                        border: 1px solid red;
+                    }
+                }
+                &__check {
+                    opacity: 0.6;
+                    font-family: $font-jost;
+                    font-size: 1.2rem;
+                    line-height: 18px;
+                    font-weight: 400;
+                    color: $green;
+                    margin: 16px 0 0;
+                    width: 80%;
+                }
+                &__link {
+                    text-decoration: none;
+                    font-family: $font-jost;
+                    font-size: 1.2rem;
+                    line-height: 18px;
+                    font-weight: 400;
+                    color: $green;
+                    text-decoration: none;
+                    display: inline-block;
+                    &::after {
+                        content: '';
+                        width: 100%;
+                        height: 2px;
+                        background-color: transparent;
+                        display: block;
+                        transition: .8s;
+                        margin-top: -2px;
+                    }
+                    &:hover {
+                        &::after {
+                        background-color: $green; // #dee0da;
+                        transition: .8s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+footer {
+    border-top: 1px solid black;
+    padding-top: 77px;
+}
+.footer {
+    &__box {
+
+    }
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        & .logo {
+            margin-top: 11px;
+            margin-right: 130px;
+            width: 179px;
+            height: 48px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        &-item {
+            margin-bottom: 24px;
+        }
+        &-link {
+            font-family: $font-jost;
+            font-size: 18px;
+            line-height: 1.2;
+            font-weight: 400;
+            color: $green;
+            text-decoration: none;
+        }
+    }
+    &__tel {
+        font-family: $font-jost;
+        font-size: 27px;
+        line-height: 1.2;
+        font-weight: 400;
+        color: $green;
+        text-decoration: none;
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__mail {
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__contacts {
+        &-item {
+            margin-bottom: 30px;
+        }
+    }
+    &__media {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 25px;
+        &-item {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            opacity: 0.8;
+            border: 2px solid $green;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &-vk {
+            background-image: url(../img/vk.svg);            
+            background-size: 25px;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        &-inst {
+            background-image: url(../img/instagram.svg);    
+            background-size: 18px;        
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        &-fb {
+            background-image: url(../img/facebook.svg);    
+            background-size: 18px;        
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+    &__copyright {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        &-text, &-link {
+            opacity: 0.6;
+            font-family: $font-jost;
+            font-size: 16px;
+            line-height: 1.2;
+            font-weight: 400;
+            color: $green;
+            text-decoration: none;
+        }
+        &-link {
+            &:hover + &-name {
+                opacity: 1;
+            }
+            &-name {
+                opacity: 0.6;
+                cursor: pointer;
+                &:hover {
+                    opacity: 1;
+                }
+            }
         }
     }
 }
