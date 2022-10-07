@@ -12,7 +12,6 @@ import './styles/main.scss';
  // init Swiper:
 var swiper = new Swiper(".offerSwiper", {
   slidesPerView: 3,
-  spaceBetween: 30,
   freeMode: true,
   slidesPerGroup: 3,
   loop:true,

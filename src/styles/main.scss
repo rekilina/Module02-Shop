@@ -633,6 +633,9 @@ body {
                     transform: translateY(0rem);
                     transition-duration: 1s;
                 }
+                &-active {
+                    left: 1px;
+                }
             }
         }
     }
@@ -1069,6 +1072,9 @@ body {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
+                & .link {
+                    cursor: pointer;
+                }
                 &__title {
                     font-family: $font-cormorant;
                     font-size: 3rem;
@@ -1126,7 +1132,7 @@ body {
                     &::after {
                         content: '';
                         width: 100%;
-                        height: 2px;
+                        height: 1px;
                         background-color: transparent;
                         display: block;
                         transition: .8s;
