@@ -764,6 +764,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
             &:hover {
                 border-color: $orange;
                 color: $orange;
@@ -1143,7 +1144,7 @@ body {
     }
 }
 footer {
-    border-top: 1px solid black;
+    border-top: 1px solid #d3d5cf;
     padding-top: 77px;
 }
 .footer {
@@ -1213,7 +1214,7 @@ footer {
             height: 45px;
             border-radius: 50%;
             opacity: 0.8;
-            border: 2px solid $green;
+            border: 2px solid #52593f;
             &:hover {
                 opacity: 1;
             }
