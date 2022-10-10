@@ -1,4 +1,4 @@
-# webpack configuration
+# Как настроить webpack для верстки сайта
 
 > At its core, webpack is a static module bundler for modern JavaScript applications.
 
