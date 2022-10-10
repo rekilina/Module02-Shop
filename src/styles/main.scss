@@ -13,6 +13,8 @@ $white: #ffffff;
 $font-jost: 'Jost', sans-serif;
 $font-cormorant: 'Cormorant', serif;
 
+$link-transition-time: 0.5s;
+
 html {
     font-size: 10px;
 }
@@ -23,6 +25,10 @@ body {
     position: relative;
     z-index: -10;
     background-color: $white;
+    background-image: url(../img/background_full.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
 }
 .header {
     max-width: 1440px;
@@ -45,6 +51,7 @@ body {
         line-height: 1.2;
         font-weight: 400;
         color: $green;
+        transition: $link-transition-time;
         &:hover {
             color: $orange;
         }
@@ -57,6 +64,7 @@ body {
         text-transform: uppercase;
         letter-spacing: 0.08em;
         color: $green;
+        transition: $link-transition-time;
         padding: 0 0 0 160px;
         &:hover {
             color: $orange;
@@ -68,6 +76,7 @@ body {
         width: 4rem;
         height: 4rem;
         background-color: $orange;
+        transition: $link-transition-time;
         border-radius: 50%;
         background-repeat: no-repeat;
         background-position: center center;
@@ -104,9 +113,9 @@ body {
     padding: 0 15px;
 }
 .main {
-    background-image: url(../img/background_1_screen_415.png);
-    background-size: cover;
-    background-position-x: center;
+    // background-image: url(../img/background_1_screen_415.png);
+    // background-size: cover;
+    // background-position-x: center;
     position: relative;
     z-index: -10;
     padding-bottom: 203px;
@@ -148,12 +157,16 @@ body {
         border: 1px solid rgba($green, 0.4);
     }
     &__image {
-        width: 681px;
-        height: 681px;
+        // width: 681px;
+        // height: 681px;
         /*------change later ------------*/
         position: relative;
-        top: 25px;
-        left: 28px;
+        // top: 25px;
+        // left: 28px;
+        top: 21px;
+        right: -25px;
+        width: 615px;
+        height: 615px;
     }
     &__btn-border {
         width: 21px;
@@ -165,6 +178,7 @@ body {
         justify-content: center;
         align-items: center;
         z-index: 10;
+        transition: $link-transition-time;
         &:hover{
             cursor: pointer;
             border-color: $orange;
@@ -185,6 +199,7 @@ body {
         background-color: $green;
         border-radius: 100%;
         z-index: 10;
+        transition: $link-transition-time;
     }
     &__btn-1 {
         top: 60px;
@@ -303,15 +318,16 @@ body {
     border-radius: 35px;
     text-decoration: none;
     letter-spacing: 0.1rem;
+    transition: $link-transition-time;
     &:hover {
         background-color: $orange-dark;
     }
 }
 .offer {
-    background-image: url(../img/background\ 2\ sreen.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
+    // background-image: url(../img/background\ 2\ sreen.png);
+    // background-size: cover;
+    // background-position-x: center;
+    // background-repeat: no-repeat;
     height: 1047px;
     &__text {
         margin-top: 58px;
@@ -357,6 +373,7 @@ body {
         width: 10px;
         height: 18px;
         opacity: 0.55;
+        transition: $link-transition-time;
         &:hover {
             opacity: 1;
         }
@@ -545,10 +562,10 @@ body {
     padding-top: 25px;
     height: 554px;
     box-sizing: border-box;
-    background-image: url(../img/background\ 3\ screen.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
+    // background-image: url(../img/background\ 3\ screen.png);
+    // background-size: cover;
+    // background-position-x: center;
+    // background-repeat: no-repeat;
     .title {
         padding-left: 5px;
         letter-spacing: 0.01em;
@@ -605,10 +622,10 @@ body {
 .trends {
     padding-top: 27px;
     box-sizing: border-box;
-    background-image: url(../img/background\ 4\ screen.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
+    // background-image: url(../img/background\ 4\ screen.png);
+    // background-size: cover;
+    // background-position-x: center;
+    // background-repeat: no-repeat;
     height: 1104px;
     &__text {
         padding: 4rem 0 0;
@@ -665,8 +682,11 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: .4;
+        transition: $link-transition-time;
         &:hover {
             cursor: pointer;
+            opacity: 1;
         }
     }
     &__minus {
@@ -681,12 +701,6 @@ body {
             width: 14px;
         }
     }
-    &__minus, &__plus {
-        opacity: .4;
-        &:hover {
-            opacity: 1;
-        }
-    }
     &+.link {
         padding: 2.2rem 5.3rem;
     }
@@ -694,10 +708,10 @@ body {
 .catalog {
     padding-top: 36px;
     box-sizing: border-box;
-    background-image: url(../img/background\ 5\ screen.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
+    // background-image: url(../img/background\ 5\ screen.png);
+    // background-size: cover;
+    // background-position-x: center;
+    // background-repeat: no-repeat;
     height: 1684px;
     &__more {
         width: 100%;
@@ -717,6 +731,7 @@ body {
         }
         &-text {
             opacity: 0.8;
+            transition: $link-transition-time;
             font-family: $font-jost;
             font-size: 1.6rem;
             line-height: 1.2;
@@ -768,6 +783,7 @@ body {
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            transition: $link-transition-time;
             &:hover {
                 border-color: $orange;
                 color: $orange;
@@ -899,10 +915,10 @@ body {
 .delivery {
     box-sizing: border-box;
     margin-top: -13px;
-    background-image: url(../img/background\ 6\ screen.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
+    // background-image: url(../img/background\ 6\ screen.png);
+    // background-size: cover;
+    // background-position-x: center;
+    // background-repeat: no-repeat;
     height: 457px;
     &__content {
         display: flex;
@@ -917,14 +933,22 @@ body {
                 color: $green;
                 display: inline-block;
                 text-decoration: none;
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: $green;
+                    transform: scale(0);
+                    display: block;
+                    transition: .8s;
+                    margin-top: 1px;
+                    transform-origin: left;
+                    margin-top: -4px;
+                }
                 &:hover {
                     &::after {
-                        content: '';
-                        width: 100%;
-                        height: 1px;
-                        margin-top: -5px;
-                        display: block;
-                        background-color: $green;
+                        transform: scale(1);
+                        transition: $link-transition-time;
                     }
                 }
             }
@@ -952,26 +976,21 @@ body {
                 margin-top: 45px;
                 & .mastercard {
                     width: 53px;
-                    opacity: 0.4;
-                    &:hover {
-                        opacity: 1;
-                        cursor: pointer;
-                    }
                 }
                 & .visa {
                     width: 74px;
-                    opacity: 0.4;
-                    &:hover {
-                        opacity: 1;
-                        cursor: pointer;
-                    }
                 }
                 & .paypal {
                     width: 87px;
+                }
+                & .mastercard, & .visa, & .paypal {
                     opacity: 0.4;
+                    transform: scale(1);
+                    transition: $link-transition-time;
                     &:hover {
                         opacity: 1;
                         cursor: pointer;
+                        transform: scale(1.05);
                     }
                 }
             }
@@ -979,7 +998,7 @@ body {
     }
 }
 .footer {
-    background-image: url(../img/background\ 7\ screen.png);
+    // background-image: url(../img/background\ 7\ screen.png);
     height: 1130px;
     background-size: cover;
     background-position-x: center;
@@ -1011,6 +1030,10 @@ body {
             color: $green;
             display: flex;
             align-items: center;
+            transition: $link-transition-time;
+            &:hover {
+                color: $orange;
+            }
         }
         &__tel {
             &::before {
@@ -1184,6 +1207,10 @@ footer {
             font-weight: 400;
             color: $green;
             text-decoration: none;
+            transition: $link-transition-time;
+            &:hover {
+                color: $orange;
+            }
         }
     }
     &__tel {
@@ -1221,8 +1248,11 @@ footer {
             border-radius: 50%;
             opacity: 0.8;
             border: 2px solid #52593f;
+            transform: scale(1);
+            transition: $link-transition-time;
             &:hover {
                 opacity: 1;
+                transform: scale(1.05);
             }
         }
         &-vk {
