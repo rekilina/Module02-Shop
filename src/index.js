@@ -50,3 +50,13 @@ var swiper = new Swiper(".trendsSwiper", {
   },
   modules: [Navigation, Pagination]
 });
+
+// $('.header__burger').click(function() {
+//   $(this).toggleClass('header__burger-close');
+// })
+
+let burger = document.querySelector('.header__burger');
+burger.addEventListener("click", function() {
+  this.classList.toggle("burger_close");
+  // burger.style.backgroundColor  = 'red';
+})
