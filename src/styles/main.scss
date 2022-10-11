@@ -44,7 +44,7 @@ body {
 .header {
     max-width: 1440px;
     margin: 0 auto ;
-    padding: 15px 15px 30px;
+    padding: 15px 15px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,6 +202,8 @@ body {
             cursor: pointer;
         }
         @media(max-width: $r_desc) {
+            width: 36px;
+            height: 36px;
             background-color: transparent;
             border: 1px solid $green;
             background-image: url(../img/card-icon-black.svg);
@@ -219,8 +221,8 @@ body {
     &__counter {
         color: $white;
         position: absolute;
-        right: 0.8rem;
-        top: 0.6rem;
+        right: 8px;
+        top: 6px;
         font-family: $font-jost;
         font-size: 0.8rem;
         line-height: 1.2;
@@ -230,6 +232,8 @@ body {
         @media(max-width: $r_desc) {
             color: $green;
             transition: 0s;
+            right: 5px;
+            top: 4px;
         }
     }
 }
@@ -291,7 +295,7 @@ body {
             }
         }
         @media(max-width: $rmob_600) {
-            margin: 22px auto 0;
+            margin: 20px auto 0;
             width: 85%;
             max-width: inherit;
             &-image {
@@ -536,25 +540,46 @@ body {
             height: auto;
         }
         @media(max-width: $rmob_600) {
-            width: 15vw;
+            width: 25vw;
             height: auto;
+            right: -35px;
+            top: 70px;
         }
     }
     &__cucumber {
         left: 35vw;//690px;
         top: 0;
+        @media(max-width: $rmob_600) {
+            transform: rotate(90deg);
+            width: 12vw;
+            height: auto;
+            top: inherit;
+            left: inherit;
+            right: -8px;
+            bottom: 145px;
+            
+        }
     }
     &__pepper-1 {
         left: 42px;
         bottom: 182px;
+        @media(max-width: $rmob_600) {
+            display: none;
+        }
     }
     &__pepper-2 {
         left: 0;
         bottom: 223px;
+        @media(max-width: $rmob_600) {
+            display: none;
+        }
     }
     &__pepper-3 {
         left: 20px;
         bottom: 260px;
+        @media(max-width: $rmob_600) {
+            display: none;
+        }
     }
     &__red_pepper {
         left: 40px;
@@ -565,9 +590,11 @@ body {
         @media(max-width: $r_desc_hd) {
             top: 90px;
         }
-        @media(max-width: 600px) {
-            width: 15vw;
-            height: auto;
+        @media(max-width: $rmob_600) {
+            top: 230px;
+            left: 0px;
+            width: 9vw;
+            // transform: rotate(75deg);
         }
     }
     &__tomato {
@@ -576,6 +603,14 @@ body {
         @media(max-width: $r_desc_1350) {
             right: 0;
             width: 10vw;
+        }
+        @media(max-width: $rmob_600) {
+            right: inherit;
+            bottom: inherit;
+            top: 64px;
+            left: -18px;
+            width: 17vw;
+            transform: rotate(75deg);
         }
     }
 }
