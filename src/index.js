@@ -39,16 +39,16 @@ var swiper1 = new Swiper(".offerSwiper", {
     900: {
       slidesPerView: 3,
       slidesPerGroup: 3,
-      spaceBetween: 25
+      spaceBetween: 30
     }
   }
 });
 
 var swiper2 = new Swiper(".trendsSwiper", {
-  slidesPerView: 3,
-  spaceBetween: 20,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 50,
   freeMode: true,
-  slidesPerGroup: 3,
   loop:true,
   mousewheel: true,
   loopFillGroupWithBlank: true,
@@ -62,7 +62,40 @@ var swiper2 = new Swiper(".trendsSwiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  modules: [Navigation, Pagination]
+  modules: [Navigation, Pagination],
+  breakpoints: {
+    // when window width is >= 300px
+    500: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 30
+    },
+    600: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 30
+    },
+    700: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 30
+    },
+    900: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 40
+    },
+    1000: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 40
+    },
+    1200: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 40
+    }
+  }
 });
 
 let burger = document.querySelector('.header__burger');
