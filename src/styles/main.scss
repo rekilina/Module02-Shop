@@ -28,6 +28,8 @@ $r_desc_1350: 1350px;
 
 html {
     font-size: 10px;
+    overflow-x: hidden;
+    // overflow-y: scroll;
 }
 body {
     font-size: 1.6rem;
@@ -40,6 +42,8 @@ body {
     background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
+    overflow-x: hidden;
+    // overflow-y: scroll;
 }
 .header {
     max-width: 1440px;
@@ -659,10 +663,16 @@ body {
     &__size-m {
         font-size: 2.4rem;
         line-height: 3.6rem;
-        @media(max-width: $rmob_600) {
-            font-size: 12px;
+        @media(max-width: $r_desc) {
+            font-size: 20px;
             letter-spacing: 0.0px;
             line-height: 1.5;
+        }
+        @media(max-width: $r_tab) {
+            font-size: 16px;
+        }
+        @media(max-width: $rmob_600) {
+            font-size: 12px;
         }
     }
 }
@@ -694,8 +704,11 @@ body {
     &__text {
         margin-top: 58px;
         width: 50%;
-        @media(max-width: $rmob_600) {
+        @media(max-width: $r_desc) {
             width: 80%;
+            margin: 30px 0 0;
+        }
+        @media(max-width: $r_tab) {
             text-align: center;
             margin: 30px auto 0;
         }
@@ -719,8 +732,39 @@ body {
                 &__title {
                     transform: translateY(24rem);
                     transition-duration: 1s;
+                    @media(max-width: $r_desc) {
+                        transform: translateY(0);
+                        position: absolute;
+                        bottom: 100px;
+                        left: 10px;
+                        width: 100%;
+                    }
+                    @media(max-width: $rmob_600) {
+                        transform: translateY(0) translateX(-50%);
+                        position: absolute;
+                        bottom: 55px;
+                        left: 50%;
+                        width: 100%;
+                    }
+                }
+                @media(max-width: $r_desc_1350) {
+                    height: 480px;
+                    padding: 13rem 0 0 1rem;
+                }
+                @media(max-width: $r_desc) {
+                    padding: 0;
+                    height: 440px;
+                }
+                @media(max-width: $rmob_600) {
+                    height: 240px;
                 }
             }
+        }
+        @media(max-width: $rmob_600) {
+            padding: 4rem 0;
+        }
+        @media(max-width: $r_desc) {
+            padding: 7rem 0;
         }
     }
 }
@@ -732,6 +776,24 @@ body {
     overflow: initial;
     &-pagination {
         display: none;
+        bottom: 8px;
+        @media(max-width: $rmob_600) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0 !important;
+        }
+        &-bullet {
+            width: 8px;
+            height: 8px;
+            opacity: 0.4;
+            background-color: $green;
+            &-active {
+                width: 10px;
+                height: 10px;
+                background-color: $orange;
+            }
+        }
     }
     &-button-prev,
     &-button-next {
@@ -749,6 +811,9 @@ body {
             width: 10px;
             height: 18px;
             background-repeat: no-repeat;
+        }
+        @media(max-width: $rmob_600) {
+            display: none;
         }
     }
     &-button-next {
@@ -768,6 +833,10 @@ body {
         border: 1px solid rgba($green, 0.55);
         transition: transform 1s;  
         position: relative; 
+        @media(max-width: $rmob_600) {
+            width: 73%;
+            text-align: center;
+        }
         &__description {
             margin: 2.3rem 0 0;
             opacity: 0.7;
@@ -814,7 +883,7 @@ body {
         &_white {
             &::after {
                 content: '';
-                background-color: rgba($white, .55);
+                background-color: rgba($white, .0);
                 position: absolute;
                 top: 2px;
                 left: 2px;
@@ -826,10 +895,11 @@ body {
             }
             &:hover {
                 &::after {
-                    opacity: 0;
+                    background-color: rgba($white, .55);
                     transition: 1s;
                     width: calc(100% - 4px);
                     height: calc(100% - 4px);   
+                    z-index: 0;
                 }
             }
         }
@@ -848,6 +918,24 @@ body {
             background-repeat: no-repeat;
             background-size: cover;
         }
+        &__pasta, &__milk, &__steaks {
+            @media(max-width: $rmob_600) {
+                background-image: none;
+            }
+        }
+        &_img {
+            display: none;
+            @media(max-width: $rmob_600) {
+                display: block;
+                position: relative;
+                width: 65%;
+                height: auto;
+                max-width: 150px;
+                left: 50%;
+                top: 30%;
+                transform: translateY(-40%) translateX(-65%);
+            }
+        }
         &__title {
             font-family: $font-cormorant;
             font-size: 3rem;
@@ -855,7 +943,13 @@ body {
             font-weight: 700;
             color: $green;
             margin: 0;
-            z-index: 1;
+            position: relative;
+            z-index: 10;
+            @media(max-width: $rmob_600) {
+                font-size: 14px;
+                line-height: 1.2;
+                text-align: center;
+            }
         }
         &__text {
             font-family: $font-jost;
@@ -868,10 +962,15 @@ body {
             transform: translateY(24rem);
             transition-duration: 1s;
             opacity: 0;
-            z-index: 1;
+            position: relative;
+            z-index: 10;
+            @media(max-width: $r_desc) {
+                display: none;
+            }
         }
         &__plus {
             transition-duration: 1s;
+            position: relative;
             z-index: 1;
             transform: translateY(24rem);
             opacity: 0;
@@ -895,16 +994,51 @@ body {
                 margin-right: 2rem;
                 width: 3rem;
                 height: 3rem;
+                @media(max-width: $rmob_600) {
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    margin-right: 8px;
+                }
+            }
+            @media(max-width: $r_desc) {
+                transform: translateY(0);
+                opacity: .8;
+                bottom: 50px;
+                left: 10px;
+                position: absolute;
+            }
+            @media(max-width: $rmob_600) {
+                transform: translateY(0) translateX(-49%);
+                opacity: .8;
+                margin: 16px auto;
+                font-size: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                bottom: 4px;
+                left: 50%;
+                width: 100%;
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
         &:hover {
             box-shadow: 0 0 0 2px rgba($green, 0.6) inset;
             cursor: pointer;
+            @media (max-width: $rmob_600) {
+                box-shadow: none;
+            }
         }
         &:hover &__title {
             transform: translateY(0);
             opacity: 1;
             transition-duration: 1s;
+            @media(max-width: $rmob_600) {
+                transform: translateY(0) translateX(-50%);
+            }
         }
         &:hover &__text {
             transform: translateY(0);
@@ -917,6 +1051,9 @@ body {
             transition-duration: 1s;
             &:hover {
                 opacity: 1;
+            }
+            @media(max-width: $rmob_600) {
+                transform: translateY(0) translateX(-49%);
             }
         }
     }
@@ -981,10 +1118,6 @@ body {
 .trends {
     padding-top: 27px;
     box-sizing: border-box;
-    // background-image: url(../img/background\ 4\ screen.png);
-    // background-size: cover;
-    // background-position-x: center;
-    // background-repeat: no-repeat;
     height: 1104px;
     &__text {
         padding: 4rem 0 0;
@@ -1536,9 +1669,6 @@ footer {
     padding-top: 77px;
 }
 .footer {
-    &__box {
-
-    }
     &__main {
         display: flex;
         justify-content: space-between;
