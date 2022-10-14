@@ -1502,22 +1502,22 @@ body {
         align-items: center;
         @media(max-width: 1500px) {
             grid-template-columns: repeat(3, 1fr);
+            height: 1050px;
+            overflow-y: hidden;
         }
         @media(max-width: $r_desc) {
             grid-template-columns: repeat(3, 1fr);
-            height: 1050px;
             padding-top: 35px;
-            overflow-y: hidden;
         }
         @media(max-width: $r_tab) {
             grid-template-columns: repeat(2, 1fr);
             padding-top: 3px;
-            height: 1380px;
+            height: 1370px;
             gap: 10px;
         }
         @media(max-width: $rmob_600) {
             text-align: center;
-            height: 740px;
+            height: 730px;
         }
         @media(max-width: $rmob_500) {
             text-align: center;
