@@ -1533,10 +1533,12 @@ body {
         @media(max-width: $rmob_600) {
             text-align: center;
             height: 730px;
+            padding-top: 10px;
         }
         @media(max-width: $rmob_500) {
             text-align: center;
             height: 500px;
+            padding-top: 3px;
         }
         &-card {
             border-radius: 20px;
@@ -2261,7 +2263,7 @@ footer {
             align-items: center;
         }
     }
-    &.__nav {
+    &__nav {
         @media(max-width: $rmob_600) {
             display: flex;
             flex-direction: row;
@@ -2286,6 +2288,27 @@ footer {
         list-style: none;
         padding: 0;
         margin: 0;
+        &.footer__nav {
+            @media(max-width: $rmob_600) {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 65%;
+                margin-top: 24px;
+            }
+            @media(max-width: $rmob_360) {
+                width: 82%;
+            }
+        }
+        &.footer__address {
+            @media(max-width: $rmob_600) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+                gap: 7px;
+            }
+        }
         &-item {
             margin-bottom: 24px;
             @media(max-width: $rmob_600) {
@@ -2357,7 +2380,7 @@ footer {
         margin: 0;
         gap: 25px;
         @media(max-width: $rmob_600) {
-            margin-top: 40px;
+            margin-top: 30px;
             width: 100%;
             gap: 31px;
         }
@@ -2406,7 +2429,7 @@ footer {
             text-align: center;
         }
         @media(max-width: $rmob_600) {
-            margin-top: 20px;
+            margin-top: 7px;
             gap: 8px;
         }
         &-text, &-link {
@@ -2444,7 +2467,7 @@ footer {
             flex-direction: column;
             margin-bottom: 30px;
             @media(max-width: $rmob_600) {
-                margin-bottom: 0;
+                margin-bottom: 10px;
             }
         }
         @media(max-width: $rmob_600) {
@@ -2452,8 +2475,7 @@ footer {
             flex-direction: column;
             align-items: center;
             margin-top: 32px;
-            width: 100%;
-            
+            width: 100%;            
         }
     }    
 }
