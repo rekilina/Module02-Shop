@@ -1892,6 +1892,12 @@ body {
     @media(max-width: $r_desc_hd) {
         padding-top: 35px;
     }
+    @media(max-width: $r_tab) {
+        padding-bottom: 100px;
+    }
+    @media(max-width: $rmob_600) {
+        padding-bottom: 60px;
+    }
     &-box {
         display: flex;
         align-items: center;
@@ -2193,9 +2199,11 @@ body {
 footer {
     border-top: 1px solid #d3d5cf;
     padding-top: 77px;
+    @media(max-width: $rmob_600) {
+        padding-top: 30px;
+    }
 }
 .footer {
-    // height: 1130px;
     padding-bottom: 70px;
     background-size: cover;
     background-position-x: center;
@@ -2209,8 +2217,30 @@ footer {
             margin-right: 130px;
             flex-basis: 179px;
             height: 48px;
-            background-size: cover;
+            background-size: contain;
             background-repeat: no-repeat;
+            @media(max-width: $r_desc_1350) {
+                margin-right: 0;
+            }
+            @media(max-width: $r_tab) {
+                flex-basis: auto;
+            }
+            @media(max-width: $rmob_600) {
+                width: 120px;
+                height: 32px;
+                margin-top: 14px;
+            }
+        }
+        @media(max-width: $r_desc) {
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-around;
+
+        }
+        @media(max-width: $rmob_600) {
+            flex-direction: column;
+            gap: 0;
+            align-items: center;
         }
     }
     &__list {
@@ -2219,6 +2249,9 @@ footer {
         margin: 0;
         &-item {
             margin-bottom: 24px;
+            @media(max-width: $rmob_600) {
+                margin-bottom: 0;
+            }
         }
         &-link {
             font-family: $font-jost;
@@ -2231,7 +2264,33 @@ footer {
             &:hover {
                 color: $orange;
             }
+            @media(max-width: $rmob_600) {
+                font-size: 12px;
+                line-height: 1.2;
+            }
         }
+        &.footer__nav {
+            @media(max-width: $rmob_600) {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 65%;
+                margin-top: 24px;
+            }
+            @media(max-width: $rmob_360) {
+                width: 82%;
+            }
+        }
+        &.footer__address {
+            @media(max-width: $rmob_600) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+                gap: 7px;
+            }
+        }
+            
     }
     &__tel {
         font-family: $font-jost;
@@ -2249,11 +2308,7 @@ footer {
             color: $orange;
         }
     }
-    &__contacts {
-        &-item {
-            margin-bottom: 30px;
-        }
-    }
+    
     &__media {
         display: flex;
         align-items: center;
@@ -2262,6 +2317,11 @@ footer {
         padding: 0;
         margin: 0;
         gap: 25px;
+        @media(max-width: $rmob_600) {
+            margin-top: 40px;
+            width: 100%;
+            gap: 31px;
+        }
         &-item {
             width: 45px;
             height: 45px;
@@ -2301,6 +2361,15 @@ footer {
         display: flex;
         justify-content: space-between;
         padding-top: 10px;
+        @media(max-width: $r_tab) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        @media(max-width: $rmob_600) {
+            margin-top: 20px;
+            gap: 8px;
+        }
         &-text, &-link {
             opacity: 0.6;
             font-family: $font-jost;
@@ -2309,6 +2378,13 @@ footer {
             font-weight: 400;
             color: $green;
             text-decoration: none;
+            @media(max-width: $r_tab) {
+                margin: 0;
+            }
+            @media(max-width: $rmob_600) {
+                font-size: 10px;
+                line-height: 1.2;
+            }
         }
         &-link {
             &:hover + &-name {
@@ -2323,4 +2399,22 @@ footer {
             }
         }
     }
+    &__contacts {
+        &-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            @media(max-width: $rmob_600) {
+                margin-bottom: 0;
+            }
+        }
+        @media(max-width: $rmob_600) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 32px;
+            width: 100%;
+            
+        }
+    }    
 }
