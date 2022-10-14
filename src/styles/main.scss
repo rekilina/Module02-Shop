@@ -2263,27 +2263,27 @@ footer {
             align-items: center;
         }
     }
-    &__nav {
-        @media(max-width: $rmob_600) {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 65%;
-            margin-top: 24px;
-        }
-        @media(max-width: $rmob_360) {
-            width: 82%;
-        }
-    }
-    &__address {
-        @media(max-width: $rmob_600) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            gap: 7px;
-        }
-    }
+    // &__nav {
+    //     @media(max-width: $rmob_600) {
+    //         display: flex;
+    //         flex-direction: row;
+    //         justify-content: space-between;
+    //         width: 65%;
+    //         margin-top: 24px;
+    //     }
+    //     @media(max-width: $rmob_360) {
+    //         width: 82%;
+    //     }
+    // }
+    // &__address {
+    //     @media(max-width: $rmob_600) {
+    //         display: flex;
+    //         flex-direction: column;
+    //         align-items: center;
+    //         margin-top: 20px;
+    //         gap: 7px;
+    //     }
+    // }
     &__list {
         list-style: none;
         padding: 0;
@@ -2331,27 +2331,44 @@ footer {
                 line-height: 1.2;
             }
         }
-        // &.footer__nav {
-        //     @media(max-width: $rmob_600) {
-        //         display: flex;
-        //         flex-direction: row;
-        //         justify-content: space-between;
-        //         width: 65%;
-        //         margin-top: 24px;
-        //     }
-        //     @media(max-width: $rmob_360) {
-        //         width: 82%;
-        //     }
-        // }
-        // &.footer__address {
-        //     @media(max-width: $rmob_600) {
-        //         display: flex;
-        //         flex-direction: column;
-        //         align-items: center;
-        //         margin-top: 20px;
-        //         gap: 7px;
-        //     }
-        // }
+        &.footer__nav {
+            @media(max-width: $rmob_600) {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 65%;
+                margin-top: 24px;
+            }
+            @media(max-width: $rmob_360) {
+                width: 82%;
+            }
+        }
+        &.footer__address {
+            @media(max-width: $rmob_600) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+                gap: 7px;
+            }
+        }
+        &.footer__contacts {
+            &-item {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+                @media(max-width: $rmob_600) {
+                    margin-bottom: 10px;
+                }
+            }
+            @media(max-width: $rmob_600) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 32px;
+                width: 100%;            
+            }
+        }    
             
     }
     &__tel {
@@ -2461,21 +2478,21 @@ footer {
             }
         }
     }
-    &__contacts {
-        &-item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 30px;
-            @media(max-width: $rmob_600) {
-                margin-bottom: 10px;
-            }
-        }
-        @media(max-width: $rmob_600) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 32px;
-            width: 100%;            
-        }
-    }    
+    // &__contacts {
+    //     &-item {
+    //         display: flex;
+    //         flex-direction: column;
+    //         margin-bottom: 30px;
+    //         @media(max-width: $rmob_600) {
+    //             margin-bottom: 10px;
+    //         }
+    //     }
+    //     @media(max-width: $rmob_600) {
+    //         display: flex;
+    //         flex-direction: column;
+    //         align-items: center;
+    //         margin-top: 32px;
+    //         width: 100%;            
+    //     }
+    // }    
 }
