@@ -258,6 +258,9 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 15px;
+    // @media(max-width: $rmob_500) {
+    //     padding: 0 10px;
+    // }
 }
 .main {
     position: relative;
@@ -1502,22 +1505,23 @@ body {
         }
         @media(max-width: $r_desc) {
             grid-template-columns: repeat(3, 1fr);
+            height: 1050px;
             padding-top: 35px;
+            overflow-y: hidden;
         }
         @media(max-width: $r_tab) {
             grid-template-columns: repeat(2, 1fr);
             padding-top: 3px;
+            height: 1380px;
             gap: 10px;
         }
         @media(max-width: $rmob_600) {
             text-align: center;
             height: 740px;
-            overflow-y: hidden;
         }
         @media(max-width: $rmob_500) {
             text-align: center;
             height: 500px;
-            overflow-y: hidden;
         }
         &-card {
             border-radius: 20px;
@@ -1754,7 +1758,18 @@ body {
         gap: 14rem;
         @media (max-width: $r_desc_hd) {
             flex-direction: column;
-            padding-left: 0;
+            padding: 0 120px;
+            align-items: center;
+            margin-top: 35px;
+            gap: 36px;
+        }
+        @media (max-width: $r_tab) {
+            padding: 0 100px 0 60px;
+            text-align: justify;
+        }
+        @media (max-width: $rmob_500) {
+            flex-direction: column;
+            padding: 0;
             align-items: center;
             text-align: center;
             margin-top: 35px;
@@ -1763,9 +1778,13 @@ body {
         &-left {
             width: 45%;
             & span:first-child {
-                @media (max-width: $r_desc_hd) {
+                display: block;
+                @media (max-width: $r_tab) {
+                    width: 100%;
+                    margin: 0 auto 16px;
+                }
+                @media (max-width: $rmob_500) {
                     width: 78%;
-                    display: block;
                     margin: 0 auto 16px;
                 }
             }
@@ -1806,6 +1825,9 @@ body {
         &-right {
             width: 38%;
             @media(max-width: $r_tab) {
+                width: 100%;
+            }
+            @media (max-width: $r_desc_hd) {
                 width: 100%;
             }
             &-text {
@@ -1867,7 +1889,7 @@ body {
 .contact {
     padding: 56px 0 166px;
     box-sizing: border-box;
-    @media(max-width: $r_tab) {
+    @media(max-width: $r_desc_hd) {
         padding-top: 35px;
     }
     &-box {
@@ -1875,16 +1897,48 @@ body {
         align-items: center;
         justify-content: space-between;
         position: relative;
+        @media(max-width: $r_desc_hd) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
         @media(max-width: $r_tab) {
             flex-direction: column;
+            align-items: center;
         }
         &__description {
             padding-left: 120px;
             width: 60%;
             max-width: 550px;
+            @media(max-width: $r_desc_1350) {
+                // max-width: 100%;
+                padding-left: 0;
+            }
+            @media(max-width: $r_desc_hd) {
+                max-width: 100%;
+                padding-left: 120px;
+            }
+            @media(max-width: $r_tab) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+                margin: 0 auto;
+            }
+            @media(max-width: $rmob_600) {
+                width: 100%;
+                margin: 30px 0 0;
+            }
+            & .description-xs {
+                @media(max-width: $rmob_600) {
+                    margin: 0 auto;
+                }
+            }
         }
         &__text {
             margin-top: 60px;
+            @media(max-width: $r_tab) {
+                text-align: center;
+            }
         }
         &__link {
             color: $green;
@@ -1900,6 +1954,9 @@ body {
             &:hover {
                 color: $orange;
             }
+            @media(max-width: $rmob_500) {
+                font-size: 12px;
+            }
         }
         &__tel {
             &::before {
@@ -1911,6 +1968,12 @@ body {
                 display: inline-block;
                 background-repeat: no-repeat;
                 padding-right: 30px;
+                @media(max-width: $rmob_500) {
+                    width: 22px;
+                    height: 18px;
+                    background-size: 22px 18px;
+                    box-sizing: border-box;
+                }
             }
         }
         &__mail {
@@ -1924,6 +1987,13 @@ body {
                 background-size: 29px 29px;
                 display: inline-block;
                 padding-right: 30px;
+                @media(max-width: $rmob_500) {
+                    width: 22px;
+                    height: 16px;
+                    background-size: 22px 18px;
+                    box-sizing: border-box;
+                    padding-right: 25px;
+                }
             }
         }
         &__list {
@@ -1933,6 +2003,14 @@ body {
             display: flex;
             flex-direction: column;
             gap: 18px;
+            @media(max-width: $rmob_500) {
+                flex-direction: row;
+                margin-top: 15px;
+                justify-content: space-between;
+                gap: 0px;
+                align-items: center;
+                width: 100%;
+            }
         }
         &__item {
             display: flex;
@@ -1947,6 +2025,29 @@ body {
             max-width: 589px;
             position: relative;
             top: 3px;
+            @media(max-width: $r_desc_hd) {
+                margin-left: 120px;
+                margin-top: 60px;
+            }
+            @media(max-width: $r_desc) {
+                padding: 0 15px 25px;
+                width: 80%;
+            }
+            @media(max-width: $r_tab) {
+                margin:  60px 0 0;
+                width: 70%;
+            }
+            @media(max-width: $rmob_600) {
+                margin:  55px 0 0;
+            }
+            @media(max-width: $rmob_500) {
+                padding-bottom: 10px;
+                width: 90%;
+            }
+            @media(max-width: $rmob_400) {
+                padding-bottom: 10px;
+                width: 100%;
+            }
             &::before {
                 content: '';
                 height: 5px;
@@ -1956,6 +2057,16 @@ body {
                 border: none;
                 width: 55%;
                 margin-top: 14px;
+                @media(max-width: $r_desc_hd) {
+                    font-size: 14px;
+                    line-height: 1.2;
+                    width: 45.7%;
+                    box-sizing: content-box;    
+                    margin: 14px auto 0;                
+                }
+                @media(max-width: $r_tab) {
+                    font-size: 12px;       
+                }
             }
             & .card {
                 display: flex;
@@ -1963,6 +2074,13 @@ body {
                 width: 100%;
                 & .link {
                     cursor: pointer;
+                    @media(max-width: $rmob_400) {
+                        border-radius: 20px;
+                        padding: 16px 0;
+                        margin: 18px auto;
+                        width: 70%;
+                        box-sizing: border-box;
+                    }
                 }
                 &__title {
                     font-family: $font-cormorant;
@@ -1970,6 +2088,14 @@ body {
                     line-height: 1.2;
                     font-weight: 700;
                     color: $green;
+                    @media(max-width: $r_tab) {
+                        font-size: 26px;
+                        margin: 16px 0 22px;
+                        text-align: center;
+                    }
+                    @media(max-width: $rmob_600) {
+                        font-size: 22px;
+                    }
                 }
                 &__label {
                     font-family: $font-jost;
@@ -1978,6 +2104,10 @@ body {
                     font-weight: 400;
                     color: $green;
                     margin: 0 0 9px 5px;
+                    @media(max-width: $rmob_600) {
+                        font-size: 10px;
+                        margin: 0 0 5px 5px;
+                    }
                 }
                 &__input {
                     padding: 20px 25px 20px 30px;
@@ -1991,12 +2121,21 @@ body {
                     line-height: 1.2;
                     font-weight: 400;
                     color: $green;
+                    text-overflow: ellipsis;
                     &:focus {
                         border: 1px solid rgba($green, 1);
                         outline: none;
                     }
                     &:invalid {
                         border: 1px solid red;
+                    }
+                    @media(max-width: $r_tab) {
+                        padding: 20px;
+                        font-size: 12px;
+                        margin-bottom: 12px;
+                    }
+                    @media(max-width: $rmob_600) {
+                        padding: 15px 15px;
                     }
                 }
                 &__check {
@@ -2008,6 +2147,15 @@ body {
                     color: $green;
                     margin: 16px 0 0;
                     width: 80%;
+                    @media(max-width: $r_tab) {
+                        text-align: center;
+                        margin: 16px auto 0;
+                    }
+                    @media(max-width: $rmob_400) {
+                        font-size: 10px;
+                        line-height: 1.5;
+                        margin: 0 auto;
+                    }
                 }
                 &__link {
                     text-decoration: none;
@@ -2018,6 +2166,10 @@ body {
                     color: $green;
                     text-decoration: none;
                     display: inline-block;
+                    @media(max-width: $rmob_500) {
+                        font-size: 10px;
+                        line-height: 1.5;
+                    }
                     &::after {
                         content: '';
                         width: 100%;
