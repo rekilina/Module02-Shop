@@ -191,7 +191,8 @@ function topFunction() {
 burger.addEventListener('click', dropDownMenu);
 
 function dropDownMenu(e) {
+  e.preventDefault;
   let navigation = document.querySelector('.burger__nav');
-  navigation.classList.toggle('dropdown_menu');
+  navigation.classList.toggle('burger__nav-open');
   console.log(navigation.classList);
 }
