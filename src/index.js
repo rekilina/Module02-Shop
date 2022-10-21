@@ -97,8 +97,65 @@ var swiper2 = new Swiper(".trendsSwiper", {
     }
   }
 });
+// ScrollIntoView
+function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  document.querySelector(href).scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+for (let elem of document.querySelectorAll(".header__link, .link, .footer__list-link")) {
+  elem.addEventListener('click', clickHandler);
+}
 
 let burger = document.querySelector('.header__burger');
 burger.addEventListener("click", function() {
   this.classList.toggle("burger_close");
 })
+// input validation
+for(let elem of document.querySelectorAll(".counter__input")) {
+  elem.addEventListener('keypress', function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault(); 
+      if(Number(this.value) < 0) {
+        this.value = '0';
+      }
+    }
+  })
+}
+// product counter
+document.addEventListener('click', function(e) {
+  let pressed_btn = e.target;
+  let target_input = pressed_btn.parentElement.querySelector("input");
+  if(pressed_btn.classList.contains("counter__plus")) {
+    target_input.value = Number(target_input.value) + 1;
+  }
+  if(pressed_btn.classList.contains("counter__minus")) {
+    if (target_input.value > 0) {
+      target_input.value -= 1;
+    }
+  }
+})
+
+// hide banner cards
+for (let card of document.querySelectorAll(".main__btn-card")) {
+  card.hidden = true;
+}
+//product cards at the banner
+let main_banner_btns = document.querySelectorAll('.main__btn, .main__btn+p');
+for (let btn of main_banner_btns) {
+  btn.addEventListener('click', function(e) {
+    let current_target = e.target;
+    let btn_parent = current_target.closest('.main__btn-border');
+    let current_card = btn_parent.querySelector('.main__btn-card');
+    current_card.hidden = !current_card.hidden;
+  })
+}
+for(let close_card of document.querySelectorAll('.main__btn-card-close')) {
+  close_card.addEventListener('click', function(e) {
+    let current_card = this.parentElement;
+    current_card.hidden = !current_card.hidden;    
+  })
+}

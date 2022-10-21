@@ -473,6 +473,54 @@ body {
         border-radius: 100%;
         z-index: 10;
         transition: $link-transition-time;
+        &-card{
+            padding: 30px;
+            background-color: rgba($white, .9);
+            box-shadow: 0px 7px 32px 8px rgba(71,90,67,0.1);
+            border-radius: 20px;
+            position: absolute;
+            top: 50px;
+            right: -150px;
+            text-align: left;
+            width: 240px;
+            box-sizing: border-box;
+            z-index: 20;
+            // visibility: hidden;
+            &:hover {
+                cursor: auto;
+            }
+            &-close {
+                width: 12px;
+                height: 12px;
+                opacity: 0.8;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                &:hover {
+                    cursor: pointer;
+                    opacity: 1;
+                }
+            }
+            &-title {
+                font-family: $font-cormorant;
+                font-size: 24px;
+                line-height: 1.2;
+                font-weight: 700;
+                color: $green;
+            }
+            &-text {
+                opacity: 0.6;
+                font-family: $font-jost;
+                font-size: 14px;
+                line-height: 21px;
+                font-weight: 400;
+                color: $green;
+                width: 80%;
+            }
+            &-price {
+                margin-top: 10px;
+            }
+        }
     }
     &__btn-1 {
         top: 60px;
@@ -2478,21 +2526,21 @@ footer {
             }
         }
     }
-    // &__contacts {
-    //     &-item {
-    //         display: flex;
-    //         flex-direction: column;
-    //         margin-bottom: 30px;
-    //         @media(max-width: $rmob_600) {
-    //             margin-bottom: 10px;
-    //         }
-    //     }
-    //     @media(max-width: $rmob_600) {
-    //         display: flex;
-    //         flex-direction: column;
-    //         align-items: center;
-    //         margin-top: 32px;
-    //         width: 100%;            
-    //     }
-    // }    
+    &__contacts {
+        &-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            @media(max-width: $rmob_600) {
+                margin-bottom: 10px;
+            }
+        }
+        @media(max-width: $rmob_600) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 32px;
+            width: 100%;            
+        }
+    }    
 }

@@ -13,22 +13,22 @@
             <nav class="header__navigation">
                 <ul class="header__nav">
                     <li class="header__item">
-                        <a href="" class="header__link">Наша продукция</a>
+                        <a href="#offer" class="header__link" target="_self">Наша продукция</a>
                     </li>
                     <li class="header__item">
-                        <a href="" class="header__link">О компании</a>
+                        <a href="#about" class="header__link">О компании</a>
                     </li>
                     <li class="header__item">
-                        <a href="" class="header__link">Новинки</a>
+                        <a href="#trends" class="header__link">Новинки</a>
                     </li>
                     <li class="header__item">
-                        <a href="" class="header__link">Каталог</a>
+                        <a href="#catalog" class="header__link">Каталог</a>
                     </li>
                     <li class="header__item">
-                        <a href="" class="header__link">Доставка</a>
+                        <a href="#delivery" class="header__link">Доставка</a>
                     </li>
                     <li class="header__item">
-                        <a href="" class="header__link">Контакты</a>
+                        <a href="#contacts" class="header__link">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -53,7 +53,7 @@
                         <p class="description description__size-s">Сеть магазинов полезных продуктов&nbsp;питания,  производство которых основано на&nbsp;принципах и стандартах органического чистых продуктов</p>
                         <img class="main__item-image" src="img/plate.png" alt="plate">
                         <div class="main__link">
-                            <a href="#" class="link">Перейти в каталог</a>
+                            <a href="#catalog" class="link">Перейти в каталог</a>
                         </div>
                     </div>
                 </div>
@@ -67,6 +67,12 @@
                                 <span class="main__food">Авокадо</span> 134 руб
                             </p>
                         </button>
+                        <div class="main__btn-card">
+                            <img class="main__btn-card-close" src="img/close.png"></img>
+                            <div class="main__btn-card-title">Авокадо</div>
+                            <div class="main__btn-card-text">Авокадо молодой, Свежий урожай, 1шт</div>
+                            <div class="main__btn-card-price">134 руб/шт</div>
+                        </div>
                     </div>
                     <div class="main__btn-border main__btn-2">
                         <button class="main__btn" type="button">
@@ -74,6 +80,12 @@
                                 <span class="main__food">Томаты</span> 215 руб
                             </p>
                         </button>
+                        <div class="main__btn-card">
+                            <img class="main__btn-card-close" src="img/close.png"></img>
+                            <div class="main__btn-card-title">Томаты</div>
+                            <div class="main__btn-card-text">Томаты Молодые, Свежий урожай, 1кг</div>
+                            <div class="main__btn-card-price">215 руб/кг</div>
+                        </div>
                     </div>
                     <div class="main__btn-border main__btn-3">
                         <button class="main__btn" type="button">
@@ -81,7 +93,14 @@
                                 <span class="main__food">Картофель</span> 169 руб
                             </p>
                         </button>
+                        <div class="main__btn-card">
+                            <img class="main__btn-card-close" src="img/close.png"></img>
+                            <div class="main__btn-card-title">Картофель</div>
+                            <div class="main__btn-card-text">Картофель Молодой, Свежий урожай, 1кг</div>
+                            <div class="main__btn-card-price">169 руб/кг</div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -93,7 +112,7 @@
         <img src="img/main_red_pepper.png" alt="red_pepper" class="main__design main__red_pepper">
         <img src="img/main_tomato.png" alt="tomato" class="main__design main__tomato">
     </div>
-    <section class="offer">
+    <section class="offer" id="offer">
         <div class="container">
             <h1 class="title title_block">Что мы<span class="title__span">предлагаем</span></h1>
             <div class="offer__text">
@@ -142,7 +161,7 @@
             </div>
         </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <h1 class="title title_block">В чем наша<span class="title__span">уникальность</span></h1>
             <div class="about__box">
@@ -172,7 +191,7 @@
             </div>
         </div>
     </section>
-    <section class="trends">
+    <section class="trends" id="trends">
         <div class="container">
             <h1 class="title">Наши <span class="title__span">новинки</span></h1>
             <div class="trends__text">
@@ -263,7 +282,7 @@
             </div>
         </div>
     </section>
-    <section class="catalog">
+    <section class="catalog" id="catalog">
         <div class="container">
             <h1 class="title">Каталог</h1>
             <div class="catalog__text">
@@ -491,7 +510,7 @@
             
         </div>
     </section>
-    <section class="delivery">
+    <section class="delivery" id="delivery">
         <div class="container">
             <h1 class="title">Доставка и <span class="title__span">оплата</span></h1>
             <div class="delivery__content">
@@ -520,7 +539,7 @@
         </div>
     </section>
     <div class="footer">
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="container">
                 <div class="contact-box">
                     <div class="contact-box__left">
@@ -547,15 +566,15 @@
                 </div>
             </div>
         </section>
-        <footer>
+        <footer id="footer">
             <div class="container">
                 <div class="footer__box">
                     <div class="footer__main">
                         <a href="#" class="logo"></a>
                         <ul class="footer__list footer__nav">
-                            <li class="footer__list-item"><a href="#" class="footer__list-link">Наша продукция</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link">Новинки</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link">Доставка</a></li>
+                            <li class="footer__list-item"><a href="#offer" class="footer__list-link">Наша продукция</a></li>
+                            <li class="footer__list-item"><a href="#trends" class="footer__list-link">Новинки</a></li>
+                            <li class="footer__list-item"><a href="#delivery" class="footer__list-link">Доставка</a></li>
                         </ul>
                         <ul class="footer__list footer__address">
                             <li class="footer__list-item"><a href="#" class="footer__list-link">Москва , ул. Ленинградская  64</a></li>
