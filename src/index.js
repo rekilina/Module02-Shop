@@ -196,3 +196,29 @@ function dropDownMenu(e) {
   navigation.classList.toggle('burger__nav-open');
   console.log(navigation.classList);
 }
+
+let link_card_obj = document.querySelectorAll('.link');
+let card__popup = document.querySelector('.card__popup');
+card__popup.style.visibility = "hidden";
+for (let link_card of link_card_obj) {
+  link_card.addEventListener('click', function(e) {
+    console.log(e.target);
+    if(e.target.textContent == 'в корзину') {
+      let card_popup_item = document.querySelector('.card__popup-item');
+      let target_slide = e.target.closest('.swiper-slide');
+      let title = target_slide.querySelector('.swiper-slide__title').textContent;
+      card_popup_item.textContent = title; 
+      let slide_img = target_slide.querySelector('.swiper-slide__img');
+      console.log(slide_img);
+      let card_img = document.createElement('img');
+      card_img.src = slide_img.src;
+      card_img.className = 'card__popup-img';
+      let card_img_container = document.querySelector('.card__popup-container');
+      if(card_img_container.children.length > 0) {
+        card_img_container.innerHTML = "";
+      }
+      card_img_container.appendChild(card_img);
+      card__popup.style.visibility = "visible";
+    }
+  })
+}

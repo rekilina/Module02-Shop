@@ -2597,7 +2597,7 @@ footer {
     bottom: 50px;
     right: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     transition: $link-transition-time;
     &:hover {
@@ -2614,5 +2614,50 @@ footer {
         transform: rotate(-90deg);
         opacity: 0.6;
         transition: $link-transition-time;
+    }
+    @media(max-width: $r_tab) {
+        right: 10px;
+        bottom: 15px;
+        width: 35px;
+        height: 35px;
+    }
+}
+.card__popup {
+    display: flex;
+    background-color: rgba($white, 1);
+    position: absolute;
+    top: 70px;
+    right: 5px;
+    border-radius: 20px;
+    padding: 15px 10px 10px;
+    box-shadow: 0px 7px 32px 8px rgba(71,90,67,0.1);
+    align-items: center;
+    justify-content: space-between;
+    visibility: hidden;
+    &-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        opacity: 0.8;
+        transition: $link-transition-time;
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+    &-container {
+        max-height: 65px;
+        margin-right: 10px;
+    }
+    &-img {
+        max-height: 65px;
+    }
+    &-text{
+        padding: 0;
+        margin: 0;
+    }
+    &-item {
+        padding: 0;
+        margin: 0;
     }
 }
