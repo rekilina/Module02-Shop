@@ -128,6 +128,13 @@ for(let elem of document.querySelectorAll(".counter__input")) {
 // product counter
 document.addEventListener('click', function(e) {
   let pressed_btn = e.target;
+  if(e.target.tagName == "IMG") {
+    pressed_btn = e.target.parentElement;
+  }
+  if(e.target.tagName == "BUTTON") {
+    pressed_btn = e.target;
+  }
+  // console.log(e.target.tagName);
   let target_input = pressed_btn.parentElement.querySelector("input");
   if(pressed_btn.classList.contains("counter__plus")) {
     target_input.value = Number(target_input.value) + 1;
@@ -159,3 +166,24 @@ for(let close_card of document.querySelectorAll('.main__btn-card-close')) {
     current_card.hidden = !current_card.hidden;    
   })
 }
+
+//scrollToTop
+let buttonToTop = document.querySelector('.upToTop');
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > window.innerHeight/2 || document.documentElement.scrollTop > window.innerHeight/2) {
+    buttonToTop.style.display = "block";
+  } else {
+    buttonToTop.style.display = "none";
+  }
+}
+buttonToTop.onclick = topFunction;
+function topFunction() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  }); // For Safari
+  // document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
