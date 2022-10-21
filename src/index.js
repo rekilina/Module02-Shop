@@ -185,5 +185,13 @@ function topFunction() {
     left: 0,
     behavior: 'smooth'
   }); // For Safari
-  // document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
+// show drop-down menu
+
+burger.addEventListener('click', dropDownMenu);
+
+function dropDownMenu(e) {
+  let navigation = document.querySelector('.burger__nav');
+  navigation.classList.toggle('dropdown_menu');
+  console.log(navigation.classList);
+}
