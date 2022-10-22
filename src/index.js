@@ -189,13 +189,19 @@ function topFunction() {
 // show drop-down menu
 
 burger.addEventListener('click', dropDownMenu);
-
+let burger_navigation = document.querySelector('.burger__nav');
 function dropDownMenu(e) {
   e.preventDefault;
-  let navigation = document.querySelector('.burger__nav');
-  navigation.classList.toggle('burger__nav-open');
-  console.log(navigation.classList);
+  if (window.innerWidth < 1000) {
+    burger_navigation.classList.toggle('burger__nav-open');
+  }
 }
+window.addEventListener('resize', function(e) {
+  if (window.innerWidth >=1000) {
+    burger_navigation.className = 'burger__nav';
+    this.document.querySelector('.header__burger').classList.toggle('burger_close');
+  }
+})
 
 let link_card_obj = document.querySelectorAll('.link');
 let card__popup = document.querySelector('.card__popup');
