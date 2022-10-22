@@ -121,7 +121,7 @@ body {
                     position: absolute;
                     display: block;
                     height: 2px;
-                    background-color: #000;
+                    background-color: $green;
                     content: '';
                     width: 100%;
                     transition: $link-transition-time;
