@@ -173,9 +173,9 @@ let buttonToTop = document.querySelector('.upToTop');
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > window.innerHeight/2 || document.documentElement.scrollTop > window.innerHeight/2) {
-    buttonToTop.style.display = "block";
+    buttonToTop.style.visibility = "visible";
   } else {
-    buttonToTop.style.display = "none";
+    buttonToTop.style.visibility = "hidden";
   }
 }
 buttonToTop.onclick = topFunction;
@@ -199,17 +199,28 @@ function dropDownMenu(e) {
 
 let link_card_obj = document.querySelectorAll('.link');
 let card__popup = document.querySelector('.card__popup');
+let card__popup_close = document.querySelector('.card__popup-close');
+card__popup_close.addEventListener('click', function(e) {
+  card__popup.style.visibility = "hidden";
+})
 card__popup.style.visibility = "hidden";
 for (let link_card of link_card_obj) {
   link_card.addEventListener('click', function(e) {
     console.log(e.target);
     if(e.target.textContent == 'в корзину') {
       let card_popup_item = document.querySelector('.card__popup-item');
-      let target_slide = e.target.closest('.swiper-slide');
-      let title = target_slide.querySelector('.swiper-slide__title').textContent;
+      let target_slide, title, slide_img;
+      if(e.target.closest('.swiper-slide')) {
+        target_slide = e.target.closest('.swiper-slide');
+        title = target_slide.querySelector('.swiper-slide__title').textContent;
+        slide_img = target_slide.querySelector('.swiper-slide__img');
+      }
+      if(e.target.closest('.catalog__grid-card')) {
+        target_slide = e.target.closest('.catalog__grid-card');
+        title = target_slide.querySelector('.catalog__grid-title').textContent;
+        slide_img = target_slide.querySelector('.catalog__grid-img');
+      } 
       card_popup_item.textContent = title; 
-      let slide_img = target_slide.querySelector('.swiper-slide__img');
-      console.log(slide_img);
       let card_img = document.createElement('img');
       card_img.src = slide_img.src;
       card_img.className = 'card__popup-img';

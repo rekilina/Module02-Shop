@@ -2587,7 +2587,6 @@ footer {
 .upToTop {
     position: fixed;
     z-index: 20;
-    display: none;
     width: 50px;
     height: 50px;
     background-color: transparent;
@@ -2597,9 +2596,10 @@ footer {
     bottom: 50px;
     right: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     transition: $link-transition-time;
+    visibility: hidden;
     &:hover {
         cursor: pointer;
         & img {
@@ -2634,6 +2634,17 @@ footer {
     align-items: center;
     justify-content: space-between;
     visibility: hidden;
+    &-triangle {
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        display: inline-block;
+        border-style: solid;
+        border-width: 0 10px 15px 10px;
+        border-color: transparent transparent #000000 transparent;
+        border-style: inset;
+    }
     &-close {
         position: absolute;
         right: 10px;
