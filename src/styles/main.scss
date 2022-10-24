@@ -306,9 +306,7 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 15px;
-    // @media(max-width: $rmob_500) {
-    //     padding: 0 10px;
-    // }
+    position: relative;
 }
 .main {
     position: relative;
@@ -532,7 +530,7 @@ body {
             width: 240px;
             box-sizing: border-box;
             z-index: 20;
-            // visibility: hidden;
+            visibility: hidden;
             &:hover {
                 cursor: auto;
             }
@@ -2616,7 +2614,6 @@ footer {
         width: auto;
         transform: rotate(-90deg);
         opacity: 0.6;
-        transition: $link-transition-time;
     }
     @media(max-width: $r_tab) {
         right: 10px;
@@ -2630,30 +2627,32 @@ footer {
     background-color: rgba($white, 1);
     position: absolute;
     top: 70px;
-    right: 5px;
+    right: 0;
     border-radius: 20px;
     padding: 15px 10px 10px;
     box-shadow: 0px 7px 32px 8px rgba(71,90,67,0.1);
     align-items: center;
     justify-content: space-between;
     visibility: hidden;
+    z-index: 100;
     &-triangle {
         position: absolute;
-        top: 0;
         width: 0;
         height: 0;
-        display: inline-block;
         border-style: solid;
-        border-width: 0 10px 15px 10px;
-        border-color: transparent transparent #000000 transparent;
+        border-width: 0 12px 15px 12px;
+        border-color: transparent transparent #ffffff transparent;
+        -webkit-transform:rotate(360deg) ;
         border-style: inset;
+        z-index: 30;
+        top: -12px;
+        right: 18px;
     }
     &-close {
         position: absolute;
         right: 10px;
         top: 10px;
         opacity: 0.8;
-        transition: $link-transition-time;
         &:hover {
             opacity: 1;
             cursor: pointer;

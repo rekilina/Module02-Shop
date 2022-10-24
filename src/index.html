@@ -39,11 +39,11 @@
                         <span>toggle</span>
                 </button>
                 <button href="#" class="header__card">
-                    <span class="header__counter"></span>
+                    <span class="header__counter">0</span>
                 </button>
             </div>
             <div class="card__popup">
-                <div class="card__popup-tringle"></div>
+                <div class="card__popup-triangle"></div>
                 <img class="card__popup-close" src="img/close.png"></img>
                 <div class="card__popup-container">
                     
@@ -585,11 +585,11 @@
                     </div>
                     <div class="contact-box__form">
                         <h3 class="card__title">Свяжитесь с нами</h3>
-                        <form class="card" action="">
+                        <form class="card" action="mail.php" method="POST">
                             <label for="" class="card__label">Ваше имя</label>
-                            <input type="text" name="" id="" class="card__input" placeholder="Ваше имя">
+                            <input type="text" name="user_name" id="" class="card__input" placeholder="Ваше имя">
                             <label for="" class="card__label">Ваш телефон</label>
-                            <input type="tel" name="" id="" class="card__input" placeholder="Ваш телефон">
+                            <input type="tel" name="user_phone" id="" class="card__input" placeholder="Ваш телефон">
                             <button type="submit" class="link">заказать звонок</button>
                             <p class="card__check">Нажимая на кнопку вы подтверждаете свое согласие на обработку <a href="" class="card__link">персональных данных</a>.</p>
                         </form>

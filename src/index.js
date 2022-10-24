@@ -101,10 +101,13 @@ var swiper2 = new Swiper(".trendsSwiper", {
 function clickHandler(e) {
   e.preventDefault();
   const href = this.getAttribute("href");
-  document.querySelector(href).scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+  const content = this.textContent;
+  if (content != "в корзину") {
+    document.querySelector(href).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+  }
 }
 for (let elem of document.querySelectorAll(".header__link, .link, .footer__list-link")) {
   elem.addEventListener('click', clickHandler);
@@ -147,9 +150,9 @@ document.addEventListener('click', function(e) {
 })
 
 // hide banner cards
-for (let card of document.querySelectorAll(".main__btn-card")) {
-  card.hidden = true;
-}
+// for (let card of document.querySelectorAll(".main__btn-card")) {
+//   card.hidden = true;
+// }
 //product cards at the banner
 let main_banner_btns = document.querySelectorAll('.main__btn, .main__btn+p');
 for (let btn of main_banner_btns) {
@@ -157,13 +160,25 @@ for (let btn of main_banner_btns) {
     let current_target = e.target;
     let btn_parent = current_target.closest('.main__btn-border');
     let current_card = btn_parent.querySelector('.main__btn-card');
-    current_card.hidden = !current_card.hidden;
+    if(current_card.style.visibility == 'hidden') {
+      current_card.style.visibility = "visible";
+    } else {
+      if (current_card.style.visibility = "visible") {
+        current_card.style.visibility = "hidden"
+      }
+    }
   })
 }
 for(let close_card of document.querySelectorAll('.main__btn-card-close')) {
   close_card.addEventListener('click', function(e) {
     let current_card = this.parentElement;
-    current_card.hidden = !current_card.hidden;    
+    if(current_card.style.visibility == 'hidden') {
+      current_card.style.visibility = "visible";
+    } else {
+      if (current_card.style.visibility = "visible") {
+        current_card.style.visibility = "hidden"
+      }
+    }
   })
 }
 
@@ -216,17 +231,21 @@ for (let link_card of link_card_obj) {
     if(e.target.textContent == 'в корзину') {
       let card_popup_item = document.querySelector('.card__popup-item');
       let target_slide, title, slide_img;
+      // select title
       if(e.target.closest('.swiper-slide')) {
         target_slide = e.target.closest('.swiper-slide');
         title = target_slide.querySelector('.swiper-slide__title').textContent;
         slide_img = target_slide.querySelector('.swiper-slide__img');
       }
+      // select img
       if(e.target.closest('.catalog__grid-card')) {
         target_slide = e.target.closest('.catalog__grid-card');
         title = target_slide.querySelector('.catalog__grid-title').textContent;
         slide_img = target_slide.querySelector('.catalog__grid-img');
       } 
+      // set title
       card_popup_item.textContent = title; 
+      // add img
       let card_img = document.createElement('img');
       card_img.src = slide_img.src;
       card_img.className = 'card__popup-img';
@@ -235,6 +254,13 @@ for (let link_card of link_card_obj) {
         card_img_container.innerHTML = "";
       }
       card_img_container.appendChild(card_img);
+      // set position
+      let card_rect = document.querySelector('.header__card').getBoundingClientRect()
+      let popup_top = window.pageYOffset + card_rect.bottom + 15;
+      let popup_left = card_rect.left + card_rect.width - this.width - 18;
+      card__popup.style.top = popup_top + 'px';
+      card__popup.style.left = popup_left + 'px';
+      // make visible
       card__popup.style.visibility = "visible";
     }
   })
