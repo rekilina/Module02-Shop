@@ -211,12 +211,6 @@ function dropDownMenu(e) {
     burger_navigation.classList.toggle('burger__nav-open');
   }
 }
-window.addEventListener('resize', function(e) {
-  if (window.innerWidth >=1000) {
-    burger_navigation.className = 'burger__nav';
-    this.document.querySelector('.header__burger').classList.toggle('burger_close');
-  }
-})
 
 let link_card_obj = document.querySelectorAll('.link');
 let card__popup = document.querySelector('.card__popup');
@@ -257,7 +251,7 @@ for (let link_card of link_card_obj) {
       // set position
       let card_rect = document.querySelector('.header__card').getBoundingClientRect()
       let popup_top = window.pageYOffset + card_rect.bottom + 15;
-      let popup_left = card_rect.left + card_rect.width - this.width - 18;
+      let popup_left = card_rect.left -  card__popup.offsetWidth + card_rect.width + 18 ; // + card_rect.width/2 -  card__popup.offsetWidth - 18;
       card__popup.style.top = popup_top + 'px';
       card__popup.style.left = popup_left + 'px';
       // make visible
@@ -265,3 +259,12 @@ for (let link_card of link_card_obj) {
     }
   })
 }
+
+
+window.addEventListener('resize', function(e) {
+  if (window.innerWidth >=1000) {
+    burger_navigation.className = 'burger__nav';
+    this.document.querySelector('.header__burger').classList.toggle('burger_close');
+  }
+  card__popup.style.visibility = "hidden";
+})
