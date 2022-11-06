@@ -20,16 +20,7 @@ var swiper1 = new Swiper(".offerSwiper", {
   loopFillGroupWithBlank: true,
   keyboard: true,
   watchOverflow: true,
-  // slidesPerView: 1,
-  // slidesPerGroup: 1,
-  // freeMode: true,
-  // loop:true,
-  // mousewheel: true,
-  // loopFillGroupWithBlank: true,
-  // keyboard: true,
-  // spaceBetween: 50,
-  // speed: 800,
-  // watchOverflow: true,
+  // speed: 800,  
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -138,6 +129,19 @@ for(let elem of document.querySelectorAll(".counter__input")) {
     }
   })
 }
+// minus button add counter__minus-0 class at the start
+for(let elem of document.querySelectorAll(".counter__input")) {
+  let minus = elem.previousSibling.previousSibling;
+  if(Number(elem.value) <= 0) {
+    if(!minus.classList.contains("counter__minus-0")) {
+      minus.classList.add("counter__minus-0");
+    }
+  } else {
+    if(minus.classList.contains("counter__minus-0")) {
+      minus.classList.remove("counter__minus-0");
+    }
+  }
+}
 // product counter
 document.addEventListener('click', function(e) {
   let pressed_btn = e.target;
@@ -147,14 +151,24 @@ document.addEventListener('click', function(e) {
   if(e.target.tagName == "BUTTON") {
     pressed_btn = e.target;
   }
-  // console.log(e.target.tagName);
   let target_input = pressed_btn.parentElement.querySelector("input");
   if(pressed_btn.classList.contains("counter__plus")) {
     target_input.value = Number(target_input.value) + 1;
+    let minus = pressed_btn.previousElementSibling.previousElementSibling;
+    if (target_input.value > 0) {
+      if(minus.classList.contains("counter__minus-0")) {
+        minus.classList.remove("counter__minus-0");
+      }
+    } 
   }
   if(pressed_btn.classList.contains("counter__minus")) {
     if (target_input.value > 0) {
       target_input.value -= 1;
+    }
+    if (target_input.value <= 1) {
+      if(!pressed_btn.classList.contains("counter__minus-0")) {
+        pressed_btn.classList.add("counter__minus-0");
+      }
     }
   }
 })
