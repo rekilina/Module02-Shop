@@ -126,7 +126,7 @@ for(let elem of document.querySelectorAll(".counter__input")) {
       if(Number(this.value) < 0) {
         this.value = '0';
       }
-      let minus = elem.previousSibling.previousSibling;
+      let minus = elem.previousElementSibling;
       if(Number(elem.value) <= 0) {
         if(!minus.classList.contains("counter__minus-0")) {
         minus.classList.add("counter__minus-0");
@@ -141,7 +141,7 @@ for(let elem of document.querySelectorAll(".counter__input")) {
 }
 // minus button add counter__minus-0 class at the start
 for(let elem of document.querySelectorAll(".counter__input")) {
-  let minus = elem.previousSibling.previousSibling;
+  let minus = elem.previousElementSibling;
   if(Number(elem.value) <= 0) {
     if(!minus.classList.contains("counter__minus-0")) {
       minus.classList.add("counter__minus-0");
