@@ -821,9 +821,14 @@ body {
 }
 .offer {
     // height: 1047px;
-    padding-bottom: 165px;
+    // padding-bottom: 165px;
+    padding: 0 1px 165px;
     @media(max-width: $r_desc) {
-        padding-bottom: 53px;
+        // padding-bottom: 53px;
+        padding: 0 1px 53px;
+    }
+    @media(max-width: $rmob_400) {
+        padding: 42px 38px 40px;
     }
     &__text {
         margin-top: 58px;

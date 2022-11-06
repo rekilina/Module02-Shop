@@ -11,15 +11,25 @@ import 'normalize.css';  // npm install normalize.css
 
  // init Swiper:
 var swiper1 = new Swiper(".offerSwiper", {
-  slidesPerView: "auto",
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 50,
   freeMode: true,
   loop:true,
   mousewheel: true,
   loopFillGroupWithBlank: true,
   keyboard: true,
-  spaceBetween: 14,
-  speed: 800,
   watchOverflow: true,
+  // slidesPerView: 1,
+  // slidesPerGroup: 1,
+  // freeMode: true,
+  // loop:true,
+  // mousewheel: true,
+  // loopFillGroupWithBlank: true,
+  // keyboard: true,
+  // spaceBetween: 50,
+  // speed: 800,
+  // watchOverflow: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
