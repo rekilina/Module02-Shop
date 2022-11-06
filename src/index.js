@@ -126,6 +126,16 @@ for(let elem of document.querySelectorAll(".counter__input")) {
       if(Number(this.value) < 0) {
         this.value = '0';
       }
+      let minus = elem.previousSibling.previousSibling;
+      if(Number(elem.value) <= 0) {
+        if(!minus.classList.contains("counter__minus-0")) {
+        minus.classList.add("counter__minus-0");
+      }
+      } else {
+        if(minus.classList.contains("counter__minus-0")) {
+          minus.classList.remove("counter__minus-0");
+        }
+      } 
     }
   })
 }
